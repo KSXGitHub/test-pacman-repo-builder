@@ -50,5 +50,5 @@ jobs:
           git config user.name $GIT_USER_NAME
           git config user.email $GIT_USER_EMAIL
           git add -v .
-          git commit -m 'Update'
+          git commit -m --allow-empty 'Update'
           echo $GIT_PASSWORD | git push origin master
