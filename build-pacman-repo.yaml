@@ -4,4 +4,5 @@ global-settings:
   read-build-metadata: either
 members:
   - directory: build/hello-world-c
+  - directory: build/hello-world-output
   - directory: build/hello-world-rust
