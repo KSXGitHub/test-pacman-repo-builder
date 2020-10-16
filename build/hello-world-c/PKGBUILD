@@ -1,0 +1,15 @@
+pkgname='hello-world-c'
+pkgver='0.0.0'
+pkgrel='1'
+arch=('x86_64')
+makedeps=('gcc')
+source=('main.c')
+sha512sums=('SKIP')
+
+build() {
+  gcc main.c -o "hello-world-c.$pkgver"
+}
+
+package() {
+  install -Dm755 "hello-world-c.$pkgver" "$pkgdir/usr/bin/hello-world-c"
+}

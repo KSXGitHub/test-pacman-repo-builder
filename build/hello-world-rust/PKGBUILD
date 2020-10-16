@@ -1,0 +1,21 @@
+pkgname='hello-world-rust'
+pkgver='0.0.0'
+pkgrel='1'
+arch=('x86_64')
+makedeps=('cargo')
+source=(
+  'Cargo.toml'
+  'main.rs'
+)
+sha512sums=(
+  'SKIP'
+  'SKIP'
+)
+
+build() {
+  cargo build --release
+}
+
+package() {
+  install -Dm755 target/release/hello-world-rust "$pkgdir/usr/bin/hello-world-rust"
+}

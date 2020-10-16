@@ -1,0 +1,16 @@
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Generate manifest file
+        uses: ./actions/arch-run
+        with:
+          command: build-pacman-repo print-config -T repository/test-pacman-repo-builder.db -D build
