@@ -36,5 +36,6 @@ jobs:
         uses: ./actions/arch-run
         with:
           command: |
+            pacman -U repository/*.pkg.tar.zst --noconfirm
             hello-world-c
             hello-world-rust
