@@ -2,7 +2,11 @@ pkgname='hello-world-rust'
 pkgver='0.0.0'
 pkgrel='1'
 arch=('x86_64')
-makedeps=('cargo')
+makedeps=(
+  'cargo'
+  'gcc'
+  'llvm'
+)
 source=(
   'Cargo.toml'
   'main.rs'

@@ -2,7 +2,10 @@ pkgname='hello-world-c'
 pkgver='0.0.0'
 pkgrel='1'
 arch=('x86_64')
-makedeps=('gcc')
+makedeps=(
+  'gcc'
+  'llvm'
+)
 source=('main.c')
 sha512sums=('SKIP')
 
