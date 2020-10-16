@@ -59,5 +59,8 @@ jobs:
           git commit -m 'Update' --allow-empty
           echo username=KSXGitHub >> /tmp/git-login.txt
           echo password=$GIT_PASSWORD >> /tmp/git-login.txt
-          git config credential.helper '/usr/bin/cat /tmp/git-login.txt'
+          echo '#! /bin/bash' >> /tmp/credential-helper
+          echo 'cat /tmp/git-login.txt' >> /tmp/credential-helper
+          chmod +x /tmp/credential-helper
+          git config credential.helper '/tmp/credential-helper'
           git push origin master
