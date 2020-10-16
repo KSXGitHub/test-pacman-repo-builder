@@ -15,7 +15,16 @@ jobs:
         with:
           command: build-pacman-repo sync-srcinfo --update
 
+      - name: Inspect build directory
+        run: ls -A build/*
+
       - name: Build pacman packages
         uses: ./actions/arch-run
         with:
           command: build-pacman-repo build --syncdeps
+
+      - name: Inspect build directory
+        run: ls -A build/*
+
+      - name: Inspect repository
+        run: ls -A repository
