@@ -31,3 +31,10 @@ jobs:
 
       - name: Inspect repository
         run: ls -A repository
+
+      - name: Inspect installed binaries
+        uses: ./actions/arch-run
+        with:
+          command: |
+            hello-world-c
+            hello-world-rust
