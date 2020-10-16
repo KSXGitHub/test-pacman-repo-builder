@@ -1,0 +1,7 @@
+---
+global-settings:
+  repository: repository/test-pacman-repo-builder.db
+  read-build-metadata: either
+members:
+  - directory: build/hello-world-c
+  - directory: build/hello-world-rust
