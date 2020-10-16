@@ -1,6 +1,6 @@
 ---
 global-settings:
-  repository: repository/test-pacman-repo-builder.db
+  repository: repository/test-pacman-repo-builder.db.tar.gz
   read-build-metadata: either
 members:
   - directory: build/hello-world-c
