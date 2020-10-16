@@ -10,7 +10,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Generate manifest file
+      - name: Generate .SRCINFO files
         uses: ./actions/arch-run
         with:
-          command: build-pacman-repo print-config -T repository/test-pacman-repo-builder.db -D build
+          command: build-pacman-repo sync-srcinfo --update
+
+      - name: Build pacman packages
+        uses: ./actions/arch-run
+        with:
+          command: build-pacman-repo build --syncdeps
