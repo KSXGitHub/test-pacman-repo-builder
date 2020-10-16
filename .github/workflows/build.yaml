@@ -10,6 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Clone target repository
+        run: git clone https://github.com/KSXGitHub/test-pacman-repo-builder.repo.git repository
+
       - name: Generate .SRCINFO files
         uses: ./actions/arch-run
         with:
