@@ -39,3 +39,16 @@ jobs:
             pacman -U repository/*.pkg.tar.zst --noconfirm
             hello-world-c
             hello-world-rust
+
+      - name: Upload packages
+        env:
+          GIT_USER_NAME: ${{ secrets.TARGET_REPO_GIT_USER }}
+          GIT_USER_EMAIL: ${{ secrets.TARGET_REPO_GIT_EMAIL }}
+          GIT_PASSWORD: ${{ secrets.TARGET_REPO_GIT_PASSWORD }}
+        run: |
+          cd repository
+          git config user.name $GIT_USER_NAME
+          git config user.email $GIT_USER_EMAIL
+          git add -v .
+          git commit -m 'Update'
+          echo $GIT_PASSWORD | git push origin master
