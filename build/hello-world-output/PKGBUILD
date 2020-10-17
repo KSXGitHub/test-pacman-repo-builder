@@ -1,6 +1,7 @@
 pkgname='hello-world-output'
 pkgver='0.0.0'
 pkgrel='1'
+arch=('any')
 makedepends=(
   'hello-world-c'
   'hello-world-rust'
