@@ -24,7 +24,7 @@ jobs:
       - name: Build pacman packages
         uses: ./actions/arch-run
         with:
-          command: build-pacman-repo build --syncdeps
+          command: build-pacman-repo build --syncdeps --deref-db
 
       - name: Inspect build directory
         run: ls -A build/*
@@ -39,12 +39,6 @@ jobs:
             pacman -U repository/*.pkg.tar.zst --noconfirm
             hello-world-c
             hello-world-rust
-
-      - name: Convert symlink into real file
-        run: |
-          cd repository
-          rm -v test-pacman-repo-builder.db
-          cp -v test-pacman-repo-builder.db.tar.gz test-pacman-repo-builder.db
 
       - name: Upload packages
         env:
