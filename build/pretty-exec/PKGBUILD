@@ -1,0 +1,26 @@
+pkgname='pretty-exec'
+pkgver='0.0.33'
+pkgrel='1'
+arch=('x86_64')
+makedepends=(
+  'rust'
+  'gcc'
+  'llvm'
+)
+source=(
+  "$pkgname-$pkgver.tar.gz::https://github.com/KSXGitHub/pretty-exec/archive/$pkgver.tar.gz"
+)
+sha512sums=(
+  'SKIP'
+)
+
+build() {
+  cd "$pkgname-$pkgver"
+  cargo build --release --locked
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  install -Dm755 target/release/pretty-exec "$pkgdir/usr/bin/pretty-exec"
+  install -Dm755 LICENSE.md "$pkgdir/usr/share/licenses/$pkgname/LICENSE.md"
+}
