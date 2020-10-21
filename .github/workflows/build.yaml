@@ -14,7 +14,7 @@ jobs:
         run: git clone https://github.com/KSXGitHub/test-pacman-repo-builder.repo.git repository
 
       - name: Generate .SRCINFO files
-        uses: ./actions/arch-run
+        uses: pacman-repo-builder/action@0.0.0-rc.22
         with:
           command: build-pacman-repo sync-srcinfo --update
 
@@ -22,7 +22,7 @@ jobs:
         run: ls -A build/*
 
       - name: Build pacman packages
-        uses: ./actions/arch-run
+        uses: pacman-repo-builder/action@0.0.0-rc.22
         with:
           command: build-pacman-repo build --syncdeps --deref-db
 
@@ -33,7 +33,7 @@ jobs:
         run: ls -A repository
 
       - name: Inspect installed binaries
-        uses: ./actions/arch-run
+        uses: pacman-repo-builder/action@0.0.0-rc.22
         with:
           command: |
             pacman -U repository/*.pkg.tar.zst --noconfirm
