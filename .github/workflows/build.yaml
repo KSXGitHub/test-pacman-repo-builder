@@ -37,8 +37,8 @@ jobs:
         with:
           command: |
             pacman -U repository/*.pkg.tar.zst --noconfirm
-            hello-world-c
-            hello-world-rust
+            pretty-exec -- hello-world-c
+            pretty-exec -- hello-world-rust
 
       - name: Upload packages
         env:
