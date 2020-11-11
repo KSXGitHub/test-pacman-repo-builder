@@ -33,12 +33,11 @@ jobs:
         run: ls -A repository
 
       - name: Inspect installed binaries
-        uses: pacman-repo-builder/action@0.0.0-rc.23
+        uses: pacman-repo-builder/action@0.0.0-rc.43
         with:
           command: |
             pacman -U repository/*.pkg.tar.zst --noconfirm
-            pretty-exec -- hello-world-c
-            pretty-exec -- hello-world-rust
+            which dialect
 
       - name: Upload packages
         env:
