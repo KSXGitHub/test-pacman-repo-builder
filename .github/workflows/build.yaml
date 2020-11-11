@@ -18,6 +18,9 @@ jobs:
         with:
           command: build-pacman-repo init-aur-builder
 
+      - name: Inspect created manifest
+        run: cat build-pacman-repo.yaml
+
       - name: Inspect build directory
         run: ls -A build/*
 
