@@ -1,0 +1,16 @@
+---
+global-settings:
+  repository: repository/test-pacman-repo-builder.db.tar.gz
+  container: build
+  read-build-metadata: either
+  install-missing-dependencies: true
+  dereference-database-symlinks: true
+  packager: 'Hoàng Văn Khải <hvksmr1996@gmail.com>'
+  clean-before-build: true
+  clean-after-build: true
+  force-rebuild: true
+  arch-filter: [x86_64]
+  check: disabled
+  allow-failure: false
+aur-package-names:
+  - dialect

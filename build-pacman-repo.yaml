@@ -1,9 +1,0 @@
----
-global-settings:
-  repository: repository/test-pacman-repo-builder.db.tar.gz
-  read-build-metadata: either
-members:
-  - directory: build/hello-world-c
-  - directory: build/hello-world-output
-  - directory: build/hello-world-rust
-  - directory: build/pretty-exec
